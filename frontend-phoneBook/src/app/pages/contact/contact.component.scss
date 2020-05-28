@@ -80,3 +80,12 @@ h3{
 .personal-details>div{
     margin-right: 20px;
 }
+
+@media (max-width: 538px){
+    .contact-container{
+        width: 350px;
+    }
+    .personal-details{
+        padding: 3px;
+    }
+}

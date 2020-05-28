@@ -8,7 +8,7 @@ export class WebRequestService {
 
   readonly ROOT_URL;
   constructor(private http: HttpClient) { 
-    this.ROOT_URL = "/api";
+    this.ROOT_URL = "http://localhost:3000/api";
   }
 
   get(url: string) {  
