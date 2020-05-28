@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
-import { ActivatedRoute , Params} from '@angular/router';
-
+import { ActivatedRoute , Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-contact',
@@ -13,7 +12,7 @@ export class EditContactComponent implements OnInit {
   personDetails: any[] = [];
   phoneNumbers: any[] = [];
   emails : any[] = [];
-  constructor(private taskService : TaskService,private route: ActivatedRoute) { }
+  constructor(private taskService : TaskService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) =>{
@@ -39,7 +38,8 @@ export class EditContactComponent implements OnInit {
       "phone": this.phoneNumbers,
       "emails": this.emails
     }).subscribe((response) => {
-      console.log(response);
+      alert("Successfully updated!!");
+      this.router.navigate(['']);
     });
   }
 }

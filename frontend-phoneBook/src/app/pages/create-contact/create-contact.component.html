@@ -3,22 +3,22 @@
     <div class="contact-details">
         <label for="name">Name</label>
         <br>
-        <input #name type="text" id="name" class="form-control" required>
+        <input #name type="text" id="name" class="form-control" placeholder = "Enter name" required>
         <br>
         <br>
         <label for="dob">DOB</label>
         <br>
-        <input #dob type="text" id="dob" class="form-control" required>
+        <input #dob type="text" id="dob" class="form-control" placeholder = "dd/mm/yyyy" required>
         <br>
         <br>
         <label for="mobile-number">Mobile Number</label>
         <br>
-        <input #mobile type="number" id="mobile-number" class="form-control" required>
+        <input #mobile type="number" id="mobile-number" class="form-control" placeholder = "Enter phone number" required>
         <br>
         <br>
         <label for="email">Email</label>
         <br>
-        <input #email type="email" id="email" class="form-control" required>
+        <input #email type="email" id="email" class="form-control" placeholder = "Enter email" required>
 
         <div class="buttons">
             <button (click) = "saveDetails(name,dob,mobile,email)" class="btn btn-primary">Save</button>

@@ -24,4 +24,8 @@ export class TaskService {
   saveDetails(id, ob: any){
     return this.webRequest.patch('contacts/' + id, ob);
   }
+
+  deleteTask(id){
+    return this.webRequest.delete('contacts/' + id);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 import { TaskService } from 'src/app/task.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TaskService } from 'src/app/task.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   contacts: any[] = [];
 
@@ -30,5 +31,12 @@ export class ContactComponent implements OnInit {
     }else{
       document.getElementById(id).style.display = "block";
     }
+  }
+
+  deleteTask(id){
+    this.taskService.deleteTask(id).subscribe((response) => {
+      alert("Successfully Deleted!! Redirecting to front page")
+      window.location.reload();
+    })
   }
 }

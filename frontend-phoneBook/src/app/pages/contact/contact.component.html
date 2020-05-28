@@ -20,7 +20,7 @@
                         <span>{{person.dob}}</span>
                         <div class="buttons-holder">
                             <button class="btn btn-primary" routerLink = "/edit-contact/{{person._id}}">Edit</button>
-                            <button class="btn btn-light">Delete</button>
+                            <button class="btn btn-light" (click) = "deleteTask(person._id)">Delete</button>
                         </div>
                     </div>
                     

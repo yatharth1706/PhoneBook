@@ -19,7 +19,7 @@ Content-Type: application/json
 
 
 ###
-PATCH http://localhost:3000/contacts/5ecf74e0825bf80d7409a455
+PATCH http://localhost:3000/contacts/5ecfb4b4e8ec702c142ca9ce
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/contacts/5ecf74e0825bf80d7409a455
+DELETE http://localhost:3000/contacts/5ecfbd7753c2ea0574b53327
 
 
 ###
