@@ -89,3 +89,12 @@ h3{
         padding: 3px;
     }
 }
+
+@media (max-width: 438px){
+    .contact-container{
+        width: 300px;
+    }
+    .personal-details{
+        padding: 0px;
+    }
+}
