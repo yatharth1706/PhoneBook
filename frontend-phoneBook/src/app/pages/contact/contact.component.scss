@@ -8,7 +8,7 @@ h3{
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 300px;
+    height: auto;
     margin-top: 20px;
     position: relative;
 }
@@ -31,4 +31,23 @@ h3{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.person-info{
+    position: relative;
+    width: 100%;
+    background: #c5f3e2;
+    margin-top: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+.toggle-icon{
+    position: absolute;
+    right: 10px;
+}
+
+.contact-details{
+    display: none;
 }

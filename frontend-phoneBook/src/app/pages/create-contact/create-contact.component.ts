@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/task.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-contact',
@@ -10,7 +11,7 @@ export class CreateContactComponent implements OnInit {
   mobileNumbers: any[] = [];
   emails : any[] = [];
   contactOject: any;
-  constructor(private taskService : TaskService) { }
+  constructor(private taskService : TaskService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -39,8 +40,10 @@ export class CreateContactComponent implements OnInit {
       "emails": this.emails
     }
 
-    this.taskService.createList(this.contactOject).subscribe((data) => {
+    this.taskService.createContact(this.contactOject).subscribe((data) => {
       console.log(data);
+      alert("Saved successfully");
+      this.router.navigate(['']);
     });
 
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TaskService } from 'src/app/task.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,10 +9,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private taskService: TaskService) { }
+
+  contacts: any[] = [];
 
   ngOnInit(): void {
+    this.getContacts();
   }
 
+  getContacts(){
+    this.taskService.getContacts().subscribe((response: any) => {
+      this.contacts = response;
+    })
+  }
   
+  toggle(id){
+    console.log("clicked");
+    if(document.getElementById(id).style.display === "block"){
+      document.getElementById(id).style.display = "none";
+    }else{
+      document.getElementById(id).style.display = "block";
+    }
+  }
 }

@@ -8,9 +8,13 @@ export class TaskService {
 
   constructor(private webRequest : WebRequestService) { }
 
-  createList(contactObject){
+  createContact(contactObject){
     // We want to send web request to create a list
     return this.webRequest.post('contacts', contactObject)
+  }
+
+  getContacts(){
+    return this.webRequest.get('contacts');
   }
   
 }
