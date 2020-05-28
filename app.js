@@ -12,7 +12,7 @@ const { ContactDetails } = require('./db/models');
 app.use(bodyParser.json());
 
 // give access of dist folder containing frontend to express
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/frontend-phoneBook";
 app.use(express.static(distDir));
 //CORS headers middleware
 app.use(function(req, res, next) {
