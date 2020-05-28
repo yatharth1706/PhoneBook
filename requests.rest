@@ -33,3 +33,23 @@ DELETE http://localhost:3000/contacts/5ecfbd7753c2ea0574b53327
 
 ###
 GET http://localhost:3000/contacts/5ecf95d290bdbc29e8a0fb06
+
+###
+GET https://phone-book-yv.herokuapp.com/contacts
+
+### 
+POST https://phone-book-yv.herokuapp.com/contacts
+Content-Type: application/json
+
+{
+    "name": "yash",
+    "dob": "06/22/1999",
+    "phoneNumbers": [
+        9283849903,
+        2938480923
+    ],
+    "emails": [
+        "asdfjk@gmail.com",
+        "asdflkjl@gmail.com"
+    ]
+}
