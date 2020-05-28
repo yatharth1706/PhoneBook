@@ -11,6 +11,9 @@ const { ContactDetails } = require('./db/models');
 // bodyparser in middleware to extract properties from request body
 app.use(bodyParser.json());
 
+// give access of dist folder containing frontend to express
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 //CORS headers middleware
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -24,7 +27,7 @@ app.use(function(req, res, next) {
  * Purpose Get all the contacts
  */
 
-app.get('/contacts', (req,res) => {
+app.get('/api/contacts', (req,res) => {
     ContactDetails.find({}).then((contactDetails) => {
         res.send(contactDetails);
     }).catch((e) => {
@@ -37,7 +40,7 @@ app.get('/contacts', (req,res) => {
  * Purpose: Create a new contact
  */
 
- app.post('/contacts', (req,res) => {
+ app.post('/api/contacts', (req,res) => {
      const newContact = new ContactDetails({
          name: req.body.name,
          dob: req.body.dob,
@@ -57,7 +60,7 @@ app.get('/contacts', (req,res) => {
  * Purpose: Get particular contact
  */
 
-app.get('/contacts/:contactId', (req,res) => {
+app.get('/api/contacts/:contactId', (req,res) => {
     ContactDetails.find({
        _id : req.params.contactId
     }).then((newUpdatedContact) => {
@@ -71,7 +74,7 @@ app.get('/contacts/:contactId', (req,res) => {
  * Purpose: Edit / update particular contact
  */
 
- app.patch('/contacts/:contactId', (req,res) => {
+ app.patch('/api/contacts/:contactId', (req,res) => {
      ContactDetails.findOneAndUpdate({
         _id : req.params.contactId
      },{
@@ -88,7 +91,7 @@ app.get('/contacts/:contactId', (req,res) => {
  * Purpose: DELETE particular contact
  */
 
-app.delete('/contacts/:contactId',(req,res) => {
+app.delete('/api/contacts/:contactId',(req,res) => {
     ContactDetails.findOneAndRemove({
         _id : req.params.contactId
      }).then((newUpdatedContact) => {
