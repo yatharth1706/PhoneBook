@@ -4,13 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ng": "ng",
     "start": "node app.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --output-path dist",
     "dev": "env-cmd ./config/dev.env nodemon app.js"
   },
   "keywords": [],
