@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // using global javascript promise functionality in mongoose promises
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/phone-book", { useNewUrlParser : true}).then(()=>{
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser : true}).then(()=>{
     console.log("Connected to MongoDb Successfully!!");
 }).catch((err)=>{
     console.log(err);
