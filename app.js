@@ -39,7 +39,7 @@ app.get('/contacts', (req,res) => {
  app.post('/contacts', (req,res) => {
      const newContact = new ContactDetails({
          name: req.body.name,
-         dob: new Date(req.body.dob),
+         dob: req.body.dob,
          phoneNumbers: req.body.phoneNumbers,
          emails: req.body.emails
      })
@@ -51,6 +51,20 @@ app.get('/contacts', (req,res) => {
      })
  })
 
+/**
+ * GET /contacts/:contactId
+ * Purpose: Get particular contact
+ */
+
+app.get('/contacts/:contactId', (req,res) => {
+    ContactDetails.find({
+       _id : req.params.contactId
+    }).then((newUpdatedContact) => {
+       res.send(newUpdatedContact);
+    }).catch((e) => {
+        res.send(e);
+    })
+})
 /**
  * PATCH /contacts/:contactId
  * Purpose: Edit / update particular contact

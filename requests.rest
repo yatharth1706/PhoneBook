@@ -29,3 +29,7 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/contacts/5ecf74e0825bf80d7409a455
+
+
+###
+GET http://localhost:3000/contacts/5ecf95d290bdbc29e8a0fb06

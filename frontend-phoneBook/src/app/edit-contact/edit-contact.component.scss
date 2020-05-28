@@ -1,0 +1,20 @@
+.add-contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    padding: 25px;
+    background: white;
+    color: black;
+    margin-top: 20px;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    .btn{
+        margin-right: 20px;
+    }
+}

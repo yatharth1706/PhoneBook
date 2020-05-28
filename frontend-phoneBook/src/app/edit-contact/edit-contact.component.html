@@ -1,0 +1,28 @@
+<div class="container add-contact">
+    <h4>Edit Contact</h4>
+    <div class="contact-details">
+        <label for="name">Name</label>
+        <br>
+        <input #name type="text" id="name" class="form-control" value = "{{personDetails['name']}}" required>
+        <br>
+        <br>
+        <label for="dob">DOB</label>
+        <br>
+        <input #dob type="text" id="dob" class="form-control" value = "{{personDetails['dob']}}" required>
+        <br>
+        <br>
+        <label for="mobile-number">Mobile Number</label>
+        <br>
+        <input #mobile type="number" id="mobile-number" class="form-control" value = "{{personDetails['phoneNumbers']}}" required>
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <br>
+        <input #email type="email" id="email" class="form-control" value = "{{personDetails['emails']}}" required>
+
+        <div class="buttons">
+            <button class="btn btn-primary" (click) = "saveDetails(name,dob,mobile,email)">Update</button>
+            <button class="btn btn-success" routerLink = "/">Go back</button>
+        </div>
+    </div>
+</div>

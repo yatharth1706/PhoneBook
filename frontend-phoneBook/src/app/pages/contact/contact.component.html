@@ -13,10 +13,16 @@
     <div class="contact-names">
         <div class="dropdown" *ngFor = "let person of contacts">
             <div class="person-info" (click) = "toggle(person._id)">
-                {{person.name}}
+                <strong>{{person.name}}</strong>
                 <span class="toggle-icon"><i class="fas fa-sort-down"></i></span>
                 <div class="contact-details" id="{{person._id}}">
-                    <span>{{person.dob}}</span>
+                    <div class="edit-container">
+                        <span>{{person.dob}}</span>
+                        <div class="buttons-holder">
+                            <button class="btn btn-primary" routerLink = "/edit-contact/{{person._id}}">Edit</button>
+                            <button class="btn btn-light">Delete</button>
+                        </div>
+                    </div>
                     
                     <div class="personal-details">
                         <div class="phone-details">

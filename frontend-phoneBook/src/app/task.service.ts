@@ -17,4 +17,11 @@ export class TaskService {
     return this.webRequest.get('contacts');
   }
   
+  getSpecificContact(id){
+    return this.webRequest.get('contacts/'+id)
+  }
+
+  saveDetails(id, ob: any){
+    return this.webRequest.patch('contacts/' + id, ob);
+  }
 }
