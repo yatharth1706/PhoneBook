@@ -22,7 +22,7 @@
 
 5. **GET /api/find/contacts/:contactName** : Find specific contact in database using name of person
 
-6. **GET /api/contacts/:contactId** : Find specific contact usign contactId
+6. **GET /api/contacts/:contactId** : Find specific contact using contactId
 
 <h3 align="center">
   Tech Stack
