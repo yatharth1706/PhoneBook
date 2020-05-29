@@ -9,18 +9,22 @@ import { TaskService } from 'src/app/task.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
+  contactOject: any;
   constructor(private taskService: TaskService, private router: Router) { }
 
   contacts: any[] = [];
-
+  permanentContacts:any[] = [];
   ngOnInit(): void {
     this.getContacts();
   }
 
   getContacts(){
     this.taskService.getContacts().subscribe((response: any) => {
-      this.contacts = response;
+      this.contacts = response.sort((a:any,b:any) => {
+        return a.name.localeCompare(b.name) ;
+      });
+      console.log(this.contacts);
+      this.permanentContacts = this.contacts;
     })
   }
   
@@ -38,5 +42,16 @@ export class ContactComponent implements OnInit {
       alert("Successfully Deleted!! Redirecting to front page")
       window.location.reload();
     })
+  }
+  
+  getResults(contactName){
+    this.findContact(contactName);
+  }
+
+  findContact(contactName){
+
+    const results = this.permanentContacts.filter(value => value.name.toLowerCase().startsWith(contactName.toLowerCase()));
+    this.contacts = results;
+    console.log(results);
   }
 }

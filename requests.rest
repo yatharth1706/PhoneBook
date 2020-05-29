@@ -53,3 +53,6 @@ Content-Type: application/json
         "asdflkjl@gmail.com"
     ]
 }
+
+###
+GET http://localhost:3000/api/find/contacts/j 

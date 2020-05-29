@@ -56,6 +56,22 @@ app.get('/api/contacts', (req,res) => {
  })
 
 /**
+ * GET /contacts/:contactName
+ * Purpose: Search particular contact
+ */
+app.get('/api/find/contacts/:contactName', (req,res) => {
+    // let regex = new RegExp(req.par.name,'i');
+    
+    ContactDetails.find({
+        "name": { "$regex": "^" + req.params.contactName, "$options": "i" }
+    }).then((newUpdatedContact) => {
+       res.send(newUpdatedContact);
+    }).catch((e) => {
+        res.send(e);
+    })
+})
+
+/**
  * GET /contacts/:contactId
  * Purpose: Get particular contact
  */

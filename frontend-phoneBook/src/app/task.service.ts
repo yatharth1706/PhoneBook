@@ -28,4 +28,8 @@ export class TaskService {
   deleteTask(id){
     return this.webRequest.delete('contacts/' + id);
   }
+
+  findContact(contactName){
+    return this.webRequest.get('find/contacts/' + contactName);
+  }
 }

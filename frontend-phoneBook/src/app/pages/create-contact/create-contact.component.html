@@ -1,28 +1,42 @@
 <div class="container add-contact">
     <h4>Add Contact</h4>
     <div class="contact-details">
-        <label for="name">Name</label>
+        <form [formGroup]="myForm" (ngSubmit) = "saveDetails(myForm)">
+            <label for="name">Name</label>
         <br>
-        <input #name type="text" id="name" class="form-control" placeholder = "Enter name" required>
-        <br>
+        <input #name type="text" id="name" class="form-control" placeholder = "Enter name" [formControl]="myForm.controls['name']">
+        <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['name'].valid) && (myForm.controls['name'].touched)">
+            Name is required!
+        </div>
         <br>
         <label for="dob">DOB</label>
         <br>
-        <input #dob type="text" id="dob" class="form-control" placeholder = "dd/mm/yyyy" required>
+        <input #dob type="text" id="dob" class="form-control" placeholder = "dd/mm/yyyy" [formControl]="myForm.controls['dob']">
+        <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['dob'].valid) && (myForm.controls['dob'].touched)">
+            DOB is invalid!
+        </div>
         <br>
-        <br>
+
         <label for="mobile-number">Mobile Number</label>
         <br>
-        <input #mobile type="number" id="mobile-number" class="form-control" placeholder = "Enter phone number" required>
-        <br>
+        <input #mobile type="number" id="mobile-number" class="form-control" placeholder = "Enter phone number" [formControl]="myForm.controls['contactno']">
+        <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['contactno'].valid) && (myForm.controls['contactno'].touched)">
+            Contact number is invalid!
+        </div>
         <br>
         <label for="email">Email</label>
         <br>
-        <input #email type="email" id="email" class="form-control" placeholder = "Enter email" required>
+        <input #email type="email" id="email" class="form-control" placeholder = "Enter email" [formControl]="myForm.controls['email']">
+        <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['email'].valid) && (myForm.controls['email'].touched)">
+            Email is invalid!
+        </div>
 
         <div class="buttons">
-            <button (click) = "saveDetails(name,dob,mobile,email)" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             <button class="btn btn-success" routerLink = "/">Go back</button>
         </div>
+        </form>
+        
+        
     </div>
 </div>
