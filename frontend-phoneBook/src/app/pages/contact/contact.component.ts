@@ -53,5 +53,6 @@ export class ContactComponent implements OnInit {
     const results = this.permanentContacts.filter(value => value.name.toLowerCase().startsWith(contactName.toLowerCase()));
     this.contacts = results;
     console.log(results);
+
   }
 }
