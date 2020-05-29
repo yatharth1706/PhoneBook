@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 });
 
 /**
- * GET /
+ * GET /api/contacts
  * Purpose Get all the contacts
  */
 
@@ -36,7 +36,7 @@ app.get('/api/contacts', (req,res) => {
 })
 
 /**
- * POST /contacts
+ * POST /api/contacts
  * Purpose: Create a new contact
  */
 
@@ -56,7 +56,7 @@ app.get('/api/contacts', (req,res) => {
  })
 
 /**
- * GET /contacts/:contactName
+ * GET /api/contacts/:contactName
  * Purpose: Search particular contact
  */
 app.get('/api/find/contacts/:contactName', (req,res) => {
@@ -72,7 +72,7 @@ app.get('/api/find/contacts/:contactName', (req,res) => {
 })
 
 /**
- * GET /contacts/:contactId
+ * GET /api/contacts/:contactId
  * Purpose: Get particular contact
  */
 
@@ -86,7 +86,7 @@ app.get('/api/contacts/:contactId', (req,res) => {
     })
 })
 /**
- * PATCH /contacts/:contactId
+ * PATCH /api/contacts/:contactId
  * Purpose: Edit / update particular contact
  */
 
@@ -103,7 +103,7 @@ app.get('/api/contacts/:contactId', (req,res) => {
  })
 
 /**
- * PATCH /contacts/:contactId
+ * DELETE /api/contacts/:contactId
  * Purpose: DELETE particular contact
  */
 
