@@ -13,7 +13,7 @@
         <br>
         <input #dob type="text" id="dob" class="form-control" placeholder = "dd/mm/yyyy" [formControl]="myForm.controls['dob']">
         <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['dob'].valid) && (myForm.controls['dob'].touched)">
-            DOB is invalid!
+            DOB is invalid! Proper format dd/mm/yyyy
         </div>
         <br>
 
@@ -21,7 +21,7 @@
         <br>
         <input #mobile type="number" id="mobile-number" class="form-control" placeholder = "Enter phone number" [formControl]="myForm.controls['contactno']">
         <div class="alert alert-danger danger-div" *ngIf="( !myForm.controls['contactno'].valid) && (myForm.controls['contactno'].touched)">
-            Contact number is invalid!
+            Contact number length must be 10 and must be valid!
         </div>
         <br>
         <label for="email">Email</label>
