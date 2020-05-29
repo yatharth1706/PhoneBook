@@ -45,7 +45,13 @@ export class EditContactComponent implements OnInit {
       this.parameters = params;
     })
     this.getContacts(this.parameters.contactId);
-
+    // this.taskService.saveDetails( "5ed0a31cb9c88c0fb45ab703" ,{
+    //   "name": "bums",
+    //   "phoneNumbers": ["8071289737"],
+    //   "emails": ["accountant12@gmail.com"]
+    // }).subscribe((res) => {
+    //   console.log("updated!!");
+    // })
   }
 
   getContacts(id){
@@ -60,14 +66,14 @@ export class EditContactComponent implements OnInit {
     })
   }
 
-  saveDetails(myform: FormGroup){
-    let name = myform.value.name;
-    let dob = myform.value.dob;
-    let mobile = myform.value.contactno;
-    let email = myform.value.email;
-    console.log(mobile);    
+  saveDetails(myform: FormGroup,name1,dob1,mobile1,email1){
+    let name = name1.value;
+    let dob = dob1.value;
+    let mobile = mobile1.value;
+    let email = email1.value;
+    
+    console.log(name,dob,mobile,email);    
     if(myform.valid == false){
-      console.log(myform);
       return alert("Some fields of form are not valid or filled!!");
       
     }
@@ -76,10 +82,7 @@ export class EditContactComponent implements OnInit {
     this.emails.push(email);
 
     this.taskService.saveDetails(this.parameters.contactId,{
-      "name": name,
-      "dob": dob,
-      "phoneNumbers": this.phoneNumbers,
-      "emails": this.emails
+      "name":name,"dob":dob,"phoneNumbers":this.phoneNumbers,"emails":this.emails
     }).subscribe((response) => {
       alert("Successfully updated!!");
       this.router.navigate(['']);

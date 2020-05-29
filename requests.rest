@@ -1,4 +1,4 @@
-GET http://localhost:3000/contacts
+GET http://localhost:3000/api/contacts
 
 ###
 POST http://localhost:3000/contacts
@@ -55,4 +55,9 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/find/contacts/j 
+PATCH http://localhost:3000/api/contacts/5ed0a2afb9c88c0fb45ab702
+Content-Type: application/json
+
+{
+    "name": "ajay"
+}

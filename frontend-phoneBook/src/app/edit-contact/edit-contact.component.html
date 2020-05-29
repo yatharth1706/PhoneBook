@@ -1,7 +1,7 @@
 <div class="container add-contact">
     <h4>Edit Contact</h4>
     <div class="contact-details">
-        <form [formGroup]="myForm" (ngSubmit) = "saveDetails(myForm)">
+        <form [formGroup]="myForm" (ngSubmit) = "saveDetails(myForm,name,dob,mobile,email)">
             <label for="name">Name</label>
         <br>
         <input #name type="text" id="name" class="form-control" placeholder = "Enter name" value = "{{personDetails['name']}}" [formControl]="myForm.controls['name']">
