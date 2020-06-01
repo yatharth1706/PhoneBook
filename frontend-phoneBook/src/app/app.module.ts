@@ -8,13 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateContactComponent } from './pages/create-contact/create-contact.component';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
     CreateContactComponent,
-    EditContactComponent
+    EditContactComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
