@@ -8,8 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class WebRequestService {
 
   readonly ROOT_URL;
+  readonly ROOT_URL2;
   constructor(private http: HttpClient) { 
     this.ROOT_URL = "http://localhost:3000/api";
+    this.ROOT_URL2 = "http://localhost:3000";
   }
 
   get(url: string) {  
@@ -26,6 +28,15 @@ export class WebRequestService {
 
   delete(url: string){
     return this.http.delete(`${this.ROOT_URL}/${url}`);
+  }
+
+  login(email: string,password: string){
+    return this.http.post(`${this.ROOT_URL2}/users/login`, {
+      email,
+      password
+    },{ 
+      observe: 'response' 
+    });
   }
 
 }
