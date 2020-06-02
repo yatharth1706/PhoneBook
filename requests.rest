@@ -2,6 +2,18 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "email": "test4@test.com",
+    "email": "yash1235@gmail.com",
     "password": "helloworld"
 }
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "yash1235@gmail.com",
+    "password": "helloworld"
+}
+
+###
+GET http://localhost:3000/users/me/access-token
