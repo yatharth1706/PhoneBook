@@ -16,7 +16,29 @@
 
 2. **POST /api/contacts:** : Create a new contact in database 
 
+Required: Json should be sent along with this post request which will contain details of contact example:
+
+```json
+  {
+    "name" : "yash",
+    "dob" : "1/2/1999",
+    "phoneNumbers" : ["9283898999"],
+    "emails" : ["yash1234@gmail.com"]
+   }
+```
+
 3. **PATCH /api/contacts/:contactId** : Edit or Update specific contact usign contactId
+Required: Json
+Example: 
+
+```json
+  {
+    "name" : "yash",
+    "dob" : "1/2/1999",
+    "phoneNumbers" : ["9283898999"],
+    "emails" : ["yash1234@gmail.com"]
+   }
+```
 
 4. **DELETE /api/contacts/:contactId** : Delete specific contact using ContactId
 
